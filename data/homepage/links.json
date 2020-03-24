@@ -1,0 +1,57 @@
+[
+    {
+        "text": "repos per week",
+        "selector": "HomePage.reposPerWeek",
+        "link": "data/dataset/repos-per-week/"
+    },
+    {
+        "text": "events per week",
+        "selector": "HomePage.eventsPerWeek",
+        "link": "data/dataset/events-per-week/"
+    },
+    {
+        "text": "activities per programming languages",
+        "selector": "HomePage.activitiesPerProgrammingLanguages",
+        "link": "data/dataset/repos-update-activities-per-programming/"
+    },
+    {
+        "text": "active user groups",
+        "selector": "HomePage.activeUserGroups",
+        "link": "data/dataset/events-per-group/"
+    },
+    {
+        "text": "active repositories",
+        "selector": "HomePage.activeRepositories",
+        "link": "data/dataset/repos-most-active/"
+    },
+    {
+        "text": "repositories per programming language",
+        "selector": "HomePage.repositoriesPerProgrammingLanguage",
+        "link": "data/dataset/repos-per-programming-language/"
+    },
+    {
+        "text": "event day of week",
+        "selector": "HomePage.eventDayOfWeek",
+        "link": "data/dataset/events-per-day-of-week/"
+    },
+    {
+        "text": "event per week of month",
+        "selector": "HomePage.eventPerWeekOfMonth",
+        "link": "data/dataset/events-per-week-of-month/"
+    },
+    {
+        "text": "event duration",
+        "selector": "HomePage.eventDuration",
+        "link": "data/dataset/events-per-duration/"
+    },
+    {
+        "text": "event time of day",
+        "selector": "HomePage.eventTimeOfDay",
+        "link": "data/dataset/events-per-time-of-day/"
+    },
+    {
+        "text": "event locations",
+        "selector": "HomePage.eventLocations",
+        "link": "data/dataset/events-per-location/"
+    }
+]
