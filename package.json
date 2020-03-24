@@ -27,6 +27,19 @@
     "@wdio/spec-reporter": "^5.18.7",
     "@wdio/sync": "^5.20.1",
     "chromedriver": "^80.0.1",
+    "csvtojson": "^2.0.10",
     "wdio-chromedriver-service": "^5.0.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
   }
 }
