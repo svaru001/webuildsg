@@ -24,12 +24,13 @@ export default class Page {
   get suggestionLink() { return $('//footer//a[contains(text(),\'suggestions\')]') }
   get reportBugsLink() { return $('//footer//a[contains(text(),\'report bugs / send pull requests\')]') }
   // Footers Social icons
-  get socialTwitter() { return $('$(\'//p[contains(.,\'Twitter\')]/preceding-sibling::*\')') }
-  get socialFacebook() { return $('$(\'//p[contains(.,\'Facebook\')]/preceding-sibling::*\')') }
-  get socialGithub() { return $('$(\'//p[contains(.,\'GitHub\')]/preceding-sibling::*\')') }
-  get socialCalendar() { return $('$(\'//p[contains(.,\'Calendar\')]/preceding-sibling::*\')') }
-  get socialRss() { return $('$(\'//p[contains(.,\'RSS\')]/preceding-sibling::*\')') }
-  get socialItunes() { return $('$(\'//p[contains(.,\'iTunes\')]/preceding-sibling::*\')') }
+  get allSocialFooters() { return $$('ul.social li') }
+  get socialTwitter() { return $('//p[contains(.,\'Twitter\')]/preceding-sibling::*') }
+  get socialFacebook() { return $('//p[contains(.,\'Facebook\')]/preceding-sibling::*') }
+  get socialGithub() { return $('//p[contains(.,\'GitHub\')]/preceding-sibling::*') }
+  get socialCalendar() { return $('//p[contains(.,\'Calendar\')]/preceding-sibling::*') }
+  get socialRss() { return $('//p[contains(.,\'RSS\')]/preceding-sibling::*') }
+  get socialItunes() { return $('//p[contains(.,\'iTunes\')]/preceding-sibling::*') }
 
 
   open(path) {

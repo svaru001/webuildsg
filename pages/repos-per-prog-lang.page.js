@@ -1,6 +1,6 @@
 import Page from './page'
 
-class DataPage extends Page() {
+class ReposPerProgLang extends Page {
 
   // Headline Page Objects
   get pageHeader3() { return $('div.graph-section h3') }
@@ -33,4 +33,4 @@ class DataPage extends Page() {
     super.open('/repos-per-programming-language')
   }
 
-}
+} export default new ReposPerProgLang()
