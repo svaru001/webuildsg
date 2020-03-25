@@ -1,6 +1,6 @@
 import Page from './page'
 
-class EventsPerLocation extends Page {
+class EventsPerLocationPage extends Page {
 
 
   // Main Page Objects
@@ -36,4 +36,4 @@ class EventsPerLocation extends Page {
   }
 
 
-} export default new EventsPerLocation()
+} export default new EventsPerLocationPage()
