@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/wdio configurations/wdio.conf.js && allure generate --clean && allure open",
+    "docker-test":"./node_modules/.bin/wdio configurations/docker.conf.js && allure generate --clean && allure open",
+    "report": "allure generate --clean && allure open"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,9 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
+    "@wdio/allure-reporter": "^5.22.4",
     "@wdio/cli": "^5.22.3",
+    "@wdio/firefox-profile-service": "^5.21.0",
     "@wdio/local-runner": "^5.22.3",
     "@wdio/mocha-framework": "^5.18.7",
     "@wdio/spec-reporter": "^5.18.7",
@@ -30,7 +34,8 @@
     "chromedriver": "^80.0.1",
     "csvtojson": "^2.0.10",
     "node-fetch": "^2.6.0",
-    "wdio-chromedriver-service": "^5.0.2"
+    "wdio-chromedriver-service": "^5.0.2",
+    "wdio-docker-service": "^2.3.1"
   },
   "babel": {
     "presets": [
