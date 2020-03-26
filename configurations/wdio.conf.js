@@ -20,6 +20,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
+        './tests/events-per-locations.test.js'
         './tests/events-per-group.test.js',
         './tests/homepage.test.js',
         './tests/repos-per-prog-lang.test.js'

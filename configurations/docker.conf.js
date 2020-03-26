@@ -23,9 +23,10 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        //'./tests/events-per-group.test.js',
-        //'./tests/homepage.test.js',
-        './tests/repos-per-prog-lang.test.js'
+         './tests/events-per-group.test.js',
+         './tests/homepage.test.js',
+         './tests/repos-per-prog-lang.test.js',
+         './tests/events-per-locations.test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -88,7 +89,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
