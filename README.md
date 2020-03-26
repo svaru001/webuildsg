@@ -34,9 +34,21 @@ Run Tests in Docker (No Pre-setup required)
 npm run docker-test
 ```
 
+Run Allure Report to get detailed report with Screenshots
+
+```sh
+npm run report
+```
 ## Allure reports (default)
 
 you will be redirected to Allure HTML reporter after Test execution is finished.
+You can Run Report explicitly 
+```sh
+npm run report
+```
+
+![Allure Report Demo](data/demo/allure-reporter-demo.png)
+
 
 ## Running test suit
 
@@ -44,3 +56,4 @@ To run our test suit:
 - Open terminal.
 - Navigate to the path the project was cloned in.
 - Run `npm run docker-test`
+- Ren `npm run report`
