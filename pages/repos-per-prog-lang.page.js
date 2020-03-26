@@ -3,7 +3,7 @@ import Page from './page'
 class ReposPerProgLangPage extends Page {
 
   // Headline Page Objects
-  get pageHeader3() { return $('div.graph-section h3') }
+  get pageHeader3() { return $('//h3[contains(.,\'repositories per programming languages\')]') }
 
   // Content Page Objects
   get languageC() { return $('#language-c') }
@@ -26,11 +26,21 @@ class ReposPerProgLangPage extends Page {
   get languageShell() { return $('#language-shell') }
   get languageSwift() { return $('#language-swift') }
   get languageTex() { return $('#language-tex') }
-  get resultDiv() { return $('#repos-per-programming-language') }
+  get allProgLangSelector() { return $$('ul#select-language label') }
 
+
+  // Repositories
+  get repositories() { return $('#repos-per-programming-language') }
+  get repoArray() {return $('//div[@id=\'repos-per-programming-language\']//a')}
   //Methods
   open() {
-    super.open('/repos-per-programming-language')
+    super.open('/data/dataset/repos-per-programming-language')
+    this.waitForPageLoad()
+  }
+  waitForPageLoad() {
+    if (!this.pageHeader3.isDisplayed()) {
+      this.pageHeader3.waitForDisplayed()
+    }
   }
 
 } export default new ReposPerProgLangPage()
