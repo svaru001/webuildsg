@@ -25,7 +25,7 @@ class EventsPerGroupPage extends Page {
   }
 
   getdynamicGroupSelector(innerText) {
-    let xpath= '//a[contains(.,\''   +innerText+   '\')]'
+    let xpath = '//a[contains(.,\'' + innerText + '\')]'
     return $(xpath)
   }
 

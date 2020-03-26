@@ -31,7 +31,7 @@ class ReposPerProgLangPage extends Page {
 
   // Repositories
   get repositories() { return $('#repos-per-programming-language') }
-  get repoArray() {return $('//div[@id=\'repos-per-programming-language\']//a')}
+  get repoArray() { return $('//div[@id=\'repos-per-programming-language\']//a') }
   //Methods
   open() {
     super.open('/data/dataset/repos-per-programming-language')

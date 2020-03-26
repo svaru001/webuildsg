@@ -6,7 +6,7 @@ class HomePage extends Page {
   get searchText() { return $('input.search') }
 
   // Main Content 
-  get allGraphs() {return $$('p.graph-name')}
+  get allGraphs() { return $$('p.graph-name') }
   get reposPerWeek() { return $('//li[@data-index=\'repositories repos open source week weeks\']') }
   get eventsPerWeek() { return $('//li[@data-index=\'events meetup week weeks\']') }
   get activitiesPerProgrammingLanguages() { return $('//li[@data-index=\'repos repositories open source programming language\']') }
@@ -20,7 +20,7 @@ class HomePage extends Page {
   get eventLocations() { return $('//li[@data-index=\'meetup event location venu\']') }
 
   // Page Objects for Boxes
-  get allBoxes() {return $$('.boxes li')}
+  get allBoxes() { return $$('.boxes li') }
   //Generic for All Years Incase its Dynamic
   get openSourceReposUpdatedInYear() { return $('//p[contains(text(),\'open source repos updated in \')]') }
   get openSourceReposUpdatedInYear() { return $('//p[contains(text(),\'updates made to repos in \')]') }

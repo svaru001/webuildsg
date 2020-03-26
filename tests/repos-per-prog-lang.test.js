@@ -2,14 +2,13 @@ import ReposPerProgLangPage from '../pages/repos-per-prog-lang.page';
 import assert from 'assert';
 const expect = require('chai').expect
 import allureReporter from '@wdio/allure-reporter'
-import reposPerProgLangPage from '../pages/repos-per-prog-lang.page';
 
-describe('Events Per Group Page:', function () {
-  
+describe('Programming Language Repositories:', function () {
+
   before(() => {
     ReposPerProgLangPage.open()
   })
-  
+
   afterEach(() => {
     if (!(browser.getUrl() == 'https://webuildsg.github.io/data/dataset/repos-per-programming-language/'))
       ReposPerProgLangPage.open()
@@ -17,7 +16,7 @@ describe('Events Per Group Page:', function () {
     if (browser.getUrl().includes('#'))
       ReposPerProgLangPage.open()
   })
-  
+
   it('Should display Header', function () {
     assert.equal(ReposPerProgLangPage.header.isDisplayed(), true)
   })
@@ -26,17 +25,17 @@ describe('Events Per Group Page:', function () {
     ReposPerProgLangPage.headerLinkMain.click()
     assert.equal($('//h1[contains(.,\'404\')]').isDisplayed(), true)
   })
-  
+
   it('Should go to apps page if clicked on apps icon', function () {
     ReposPerProgLangPage.headerLinkApps.click()
     assert.equal($('//h1[contains(.,\'404\')]').isDisplayed(), true)
   })
-  
+
   it('Should go to live webuild page if clicked on live music icon', function () {
     ReposPerProgLangPage.headerLinkLiveMusic.click()
     assert.equal(browser.getUrl(), 'https://live.webuild.sg/')
   })
-  
+
   it('Should go to api webuild page if clicked on api icon', function () {
     ReposPerProgLangPage.headerLinkApi.click()
     assert.equal(browser.getUrl(), 'https://api.webuild.sg/')
@@ -54,22 +53,22 @@ describe('Events Per Group Page:', function () {
     ReposPerProgLangPage.languageCPlus.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
   })
-  
+
   it('Should show repos when click on language Clojure', function () {
     ReposPerProgLangPage.languageClojure.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
   })
-  
+
   it('Should show repos when click on language CoffeScript', function () {
     ReposPerProgLangPage.languageCoffeescript.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
   })
- 
+
   it('Should show repos when click on language CSS', function () {
     ReposPerProgLangPage.languageCss.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
   })
- 
+
   it('Should show repos when click on language Go', function () {
     ReposPerProgLangPage.languageGo.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
@@ -84,7 +83,7 @@ describe('Events Per Group Page:', function () {
     ReposPerProgLangPage.languageHtml.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
   })
- 
+
   it('Should show repos when click on language Java', function () {
     ReposPerProgLangPage.languageJava.click()
     assert.equal(ReposPerProgLangPage.openSourceRepoPlaceholder.isDisplayed(), true)
@@ -199,7 +198,7 @@ describe('Events Per Group Page:', function () {
     assert.equal(browser.getUrl().includes('https://github.com/webuildsg'), true)
   })
 
-  it('Should redirect to WeBuildSg RSS feel when clicked on  \'RSS social\' icon ', function () {
+  it('Should redirect to WeBuildSg RSS feed when clicked on  \'RSS social\' icon ', function () {
     ReposPerProgLangPage.socialRss.click()
     assert.equal(browser.getUrl().includes('https://feeds.feedburner.com/WeBuildLive'), true)
   })
