@@ -20,7 +20,9 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/**'
+        './tests/events-per-group.test.js',
+        './tests/homepage.test.js',
+        './tests/repos-per-prog-lang.test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -49,13 +51,25 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
         maxInstances: 5,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            // args: [
+            //     '--headless',
+            //     '--disable-gpu',
+            //     '--window-size=1280,750',
+            //     '--remote-debugging-port=9222',
+            // ],
+            prefs: {
+                'profile.managed_default_content_settings.popups': 1,
+                'profile.managed_default_content_settings.notifications': 1,
+            }
+        }
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -109,7 +123,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -124,8 +138,15 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
- 
+    reporters: [
+        'spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableMochaHooks: true
+            //isableWebdriverScreenshotsReporting: false,
+        }]
+    ],
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -195,12 +216,14 @@ exports.config = {
      * afterEach in Mocha)
      */
     // afterHook: function (test, context, { error, result, duration, passed, retries }) {
+
     // },
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+        browser.saveScreenshot('data/test-screenshots/'+test.title+'.png')
+    },
 
 
     /**
